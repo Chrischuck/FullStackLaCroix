@@ -1,8 +1,6 @@
 import React, {Fragment} from 'react';
 import { navigate } from '@reach/router';
 
-import AWS from '../../utils/aws'
-
 import IconInput from '../../components/iconInput'
 
 export default class extends React.Component {
@@ -34,8 +32,6 @@ export default class extends React.Component {
 
     this.setState({ loading: true })
 
-    const ddb = new AWS.DynamoDB({});
-
     const { cart } = this.props
     const email = window.localStorage.getItem('email')
     if (!email) {
@@ -43,38 +39,10 @@ export default class extends React.Component {
     }
     const id = email + ':' + Date.now()
 
-    const params = {
-      Item: {
-       "id": {
-         S: id
-        }, 
-        email: {
-          S: email
-        },
-        "drink": {
-          S: cart.id
-        },
-        address: {
-          S: address
-        },
-        name: {
-          S: name
-        },
-        time: {
-          S: time
-        },
-        status: {
-          S: 'pending'
-        }
-      }, 
-      TableName: "remy_orders"
-     };
+    window.localStorage.setItem('order', JSON.stringify({
+      id, email, drink: cart.id, address, name, time, status: pending
+    }))
 
-     await ddb.putItem(params).promise()
-      .catch(console.log)
-
-    window.localStorage.setItem('pending_order_id', id)
-    window.localStorage.setItem('pending_order_flavor', cart.name)
     this.props.setCart(null)
     this.setState({ loading: false, complete: true })
 
@@ -85,7 +53,8 @@ export default class extends React.Component {
         window.localStorage.setItem('phone', formattedNumber)
 
         if (formattedNumber) {
-          await fetch(`${process.env.TWILLIO_SERVER}/confirm`, {
+          // Twillio server for hackathon
+          /* await fetch(`${process.env.TWILLIO_SERVER}/confirm`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -95,6 +64,7 @@ export default class extends React.Component {
             })
           })
           .catch(console.log)
+          */
         }
       }
     }
