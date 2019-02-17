@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="end" style="height: 100%;">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <head>
+      <meta charset="utf-8">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    </head>
+    <body style='margin: 0px; height: 100%; display: flex;'>
+      <script>
+      window.mobileType = function() {
+        var matchstr = navigator.userAgent
+        if(matchstr.match(/Android/i) && matchstr.match(/mobile/i)) {
+          return 'Android';
+        } else if (matchstr.match(/iPhone|Touch/i) && matchstr.match(/mobile/i)) {
+          return 'iOS';
+        } else if (matchstr.match(/iPad|Android|Touch/i)) {
+          return 'Tablet';
+        } else {
+          return 'Desktop';
+        }
+      };
+      </script>
+
+      <div id="app" style='margin: 0px; height: 100%; flex: 1; display: flex;flex-direction: column;'></div>
+
+    </body>
+  </meta>
+</html>
