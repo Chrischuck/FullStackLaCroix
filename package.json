@@ -7,6 +7,7 @@
     "dev": "webpack-dev-server --mode development",
     "pack": "webpack --config webpack.config.js",
     "babel": "babel src -d dist",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json,css}\"",
     "build": "npm run pack && npm run babel"
   },
   "author": "",
@@ -32,6 +33,7 @@
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.18.2",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.4",

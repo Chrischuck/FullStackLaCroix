@@ -1,21 +1,21 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const DotenvPlugin = require('webpack-dotenv-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const DotenvPlugin = require("webpack-dotenv-plugin");
 
 const webpackConfig = {
   resolve: {
-    modules: ['src', 'node_modules']
+    modules: ["src", "node_modules"]
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   entry: {
-    vendor: ['@babel/polyfill', 'react', 'react-dom'],
-    client:     './src/index.js',
+    vendor: ["@babel/polyfill", "react", "react-dom"],
+    client: "./src/index.js"
   },
   output: {
-    path: __dirname + '/dist',
-    filename: '[name].chunkhash.bundle.js',
-    chunkFilename: '[name].chunkhash.bundle.js',
-    publicPath: '/',
+    path: __dirname + "/dist",
+    filename: "[name].chunkhash.bundle.js",
+    chunkFilename: "[name].chunkhash.bundle.js",
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -28,13 +28,13 @@ const webpackConfig = {
       },
       {
         test: /\.(css)$/,
-        use: [
-            "style-loader",
-            "css-loader"
-        ]
+        use: ["style-loader", "css-loader"]
       },
-      { test: /\.svg$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
-     ]
+      {
+        test: /\.svg$/,
+        loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+      }
+    ]
   },
   devServer: {
     historyApiFallback: true,
@@ -42,13 +42,11 @@ const webpackConfig = {
     port: 8080
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: './_redirects' },
-    ]),
+    new CopyWebpackPlugin([{ from: "./_redirects" }]),
     new HtmlWebpackPlugin({
-      title: 'Full Stack LaCroix',
-      template: './src/index.html',
-      filename: './index.html',
+      title: "Full Stack LaCroix",
+      template: "./src/index.html",
+      filename: "./index.html",
       inject: true,
       minify: {
         collapseWhitespace: true,
@@ -63,13 +61,13 @@ const webpackConfig = {
   ]
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  webpackConfig.plugins.push(    
+if (process.env.NODE_ENV !== "production") {
+  webpackConfig.plugins.push(
     new DotenvPlugin({
-      sample: './.env.default',
-      path: './.env'
+      sample: "./.env.default",
+      path: "./.env"
     })
-  )
+  );
 }
 
 module.exports = webpackConfig;

@@ -1,22 +1,27 @@
-import React from 'react'
+import React from "react";
 
 class ProgressDots extends React.Component {
   renderDots = () => {
-    const { count, step } = this.props
+    const { count, step } = this.props;
 
-    const dots = []
+    const dots = [];
     for (let i = 0; i < count; i++) {
-      dots.push(<span key={'progress-dots' + Date.now() + i} className={`dot ${i <= step ? 'dot-filled' : ''}`}></span>)
+      dots.push(
+        <span
+          key={"progress-dots" + Date.now() + i}
+          className={`dot ${i <= step ? "dot-filled" : ""}`}
+        ></span>
+      );
     }
-    return dots
-  }
+    return dots;
+  };
   render() {
     return (
-      <div className={this.props.className || ''} style={this.props.style}>
-        { this.renderDots() }
+      <div className={this.props.className || ""} style={this.props.style}>
+        {this.renderDots()}
       </div>
-    )
+    );
   }
 }
 
-export default ProgressDots
+export default ProgressDots;
