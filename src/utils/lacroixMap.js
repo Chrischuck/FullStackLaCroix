@@ -1,39 +1,34 @@
 export default {
   pure: {
     id: "pure",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/PURE-2.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/PURE-2.png",
     name: "Pure",
     description:
       "Pure: crisp, clean, and clear, the blue can is pure, our only unflavored sparkling."
   },
   lime: {
     id: "lime",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/LIME-1.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/LIME-1.png",
     name: "Lime",
     description: "Lime: is as good as it looks, always a crowd pleaser."
   },
   lemon: {
     id: "lemon",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/LEMON-2.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/LEMON-2.png",
     name: "Lemon",
     description:
       "Lemon: tastes better as a sparkling water, no seeds or soggy fruit floater."
   },
   orange: {
     id: "orange",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/LEMON-2.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/LEMON-2.png",
     name: "Orange",
     description:
       "Orange: the more things change the more they stay the same as this tangy flavor is a fan favorite!"
   },
   berry: {
     id: "berry",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/BERRY-1.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/BERRY-1.png",
     name: "Berry",
     description:
       "Berry: hopefully you’re switching to sparkling because it’s berry delicious!"
@@ -64,8 +59,7 @@ export default {
   },
   coconut: {
     id: "coconut",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/COCONUT.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/COCONUT.png",
     name: "Coconut",
     description: "Coconut: summer in a can, coconut is great as a mixer."
   },
@@ -87,8 +81,7 @@ export default {
   },
   mango: {
     id: "mango",
-    img:
-      "https://www.lacroixwater.com/wp-content/uploads/2019/01/MANGO.png",
+    img: "https://www.lacroixwater.com/wp-content/uploads/2019/01/MANGO.png",
     name: "Mango",
     description:
       "Mango: another new flavor for 2014, mangos are green on the outside with a slightly red hue on top when ripe, thus the can colors."

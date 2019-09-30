@@ -1,3 +1,3 @@
-import lacroix from './lacroixMap'
+import lacroix from "./lacroixMap";
 
-export default Object.values(lacroix)
+export default Object.values(lacroix);

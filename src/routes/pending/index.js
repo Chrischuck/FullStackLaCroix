@@ -1,10 +1,37 @@
 import React, { Fragment } from "react";
 import { navigate, Link } from "@reach/router";
+import Confetti from "react-dom-confetti";
 
 import { FadeInFromTop, FadeIn } from "../../components/animate";
 
 import Ship from "../../svg/ship";
 import Celebrate from "../../svg/celebrate";
+
+const confettiConfig1 = {
+  angle: 45,
+  spread: 45,
+  startVelocity: 45,
+  elementCount: 50,
+  dragFriction: 0.1,
+  duration: 3000,
+  stagger: 0,
+  width: "10px",
+  height: "10px",
+  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+};
+
+const confettiConfig2 = {
+  angle: 135,
+  spread: 45,
+  startVelocity: 45,
+  elementCount: 50,
+  dragFriction: 0.1,
+  duration: 3000,
+  stagger: 0,
+  width: "10px",
+  height: "10px",
+  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+};
 
 export default class extends React.Component {
   constructor(props) {
@@ -104,6 +131,12 @@ export default class extends React.Component {
           </FadeInFromTop>
         )}
 
+        <div style={{ position: 'absolute', top: '50%', left: '20px'}}>
+          <Confetti active={isComplete} config={confettiConfig1} />
+        </div>
+        <div style={{ position: 'absolute', top: '50%', right: '20px'}}>
+          <Confetti active={isComplete} config={confettiConfig2} />
+        </div>
         <div
           className="button-container"
           style={{ display: "flex", justifyContent: "center" }}
